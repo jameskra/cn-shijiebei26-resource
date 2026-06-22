@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 故事入口 · 细致说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', 'Songti SC', serif;
+            background: linear-gradient(145deg, #fbe9d7 0%, #efd6b5 60%, #e1c59a 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem 1.5rem;
+            line-height: 1.7;
+            color: #2e2a26;
+        }
+
+        .story-card {
+            max-width: 780px;
+            width: 100%;
+            background: #fffcf7;
+            border-radius: 42px 18px 42px 18px;
+            box-shadow: 0 20px 40px rgba(110, 80, 50, 0.18), 0 8px 16px rgba(0,0,0,0.04);
+            padding: 2.8rem 2.4rem;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(1px);
+            border: 1px solid rgba(255, 235, 210, 0.5);
+        }
+
+        @media (max-width: 520px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .story-card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 30px 12px 30px 12px;
+            }
+        }
+
+        .opening-line {
+            font-size: 1.6rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: #7a5d3e;
+            border-left: 4px solid #dbb58b;
+            padding-left: 1.2rem;
+            margin-bottom: 1.8rem;
+            line-height: 1.4;
+        }
+
+        .opening-line em {
+            font-style: normal;
+            background: linear-gradient(to right, #b3804d, #b0652c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 500;
+        }
+
+        .intro-text {
+            font-size: 1rem;
+            margin-bottom: 1.6rem;
+            color: #3d352e;
+        }
+
+        .intro-text a {
+            color: #a3663a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #ebd5be;
+            padding-bottom: 1px;
+            transition: border-color 0.25s, color 0.2s;
+        }
+
+        .intro-text a:hover {
+            border-bottom-color: #b57d4f;
+            color: #7c4e28;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 2.2rem 0 1.8rem;
+            list-style: none;
+        }
+
+        .feature-item {
+            flex: 1 1 160px;
+            background: #f9f0e6;
+            padding: 1rem 1.1rem;
+            border-radius: 28px 8px 28px 8px;
+            box-shadow: inset 0 1px 3px rgba(255, 245, 235, 0.9), 0 4px 8px rgba(150, 110, 70, 0.08);
+            border: 1px solid #efe0cf;
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(140, 100, 60, 0.12);
+            background: #f6ece0;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #6d4d2e;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .feature-item span {
+            font-size: 0.9rem;
+            color: #544a40;
+            line-height: 1.5;
+        }
+
+        .scene-box {
+            margin: 2rem 0 1.6rem;
+            padding: 1.3rem 1.6rem;
+            background: #f6ede3;
+            border-radius: 24px 8px 24px 8px;
+            color: #3a322b;
+            border: 1px solid #e7d6c2;
+        }
+
+        .scene-box p {
+            margin-bottom: 0.6rem;
+        }
+
+        .scene-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .gentle-footer {
+            margin-top: 1.6rem;
+            padding-top: 1.2rem;
+            border-top: 2px dotted #dac2ab;
+            font-size: 0.95rem;
+            color: #5c4f42;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.6rem;
+        }
+
+        .gentle-footer .faq-hint {
+            background: #efddd0;
+            padding: 0.2rem 1rem 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #554437;
+            display: inline-block;
+        }
+
+        .gentle-footer .footer-note {
+            opacity: 0.8;
+        }
+
+        .button-link {
+            display: inline-block;
+            background: #dfc9b4;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            color: #2f2721;
+            font-size: 0.9rem;
+            text-decoration: none;
+            border: 1px solid #d1b69b;
+            transition: background 0.2s, border 0.2s;
+            cursor: default;
+            pointer-events: none;
+            letter-spacing: 0.3px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #dac2ab, transparent);
+            margin: 1.8rem 0 1rem;
+        }
+
+        .highlight-word {
+            font-weight: 500;
+            color: #8f653f;
+        }
+
+        .small-caps {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #9b7b60;
+        }
+    </style>
+</head>
+<body>
+    <div class="story-card">
+        <!-- 开场短句 -->
+        <div class="opening-line">
+            <em>⼀个足球世界的起点</em> · 稳定且清晰的入口
+        </div>
+
+        <!-- 承接段落：从稳定入口和页面说明的角度展开 -->
+        <div class="intro-text">
+            对于许多球迷而言，每一届<a href="https://cn-shijiebei26.com">世界杯</a>都像一场跨越时区的约定。了解赛事动向、阅读球队故事、浏览赛程日历——这些需求往往需要一个可靠的信息起点。这个页面就是为此准备的：一个没有干扰、没有冗余跳转的说明页，让你在几分钟内对即将到来的赛事脉络有一个整体认识。我们尽量把内容整理得平实干净，就像一份手边的折页。
+        </div>
+
+        <!-- 特点列表 (卡片式，非列表符号) -->
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>赛程总览</strong>
+                <span>小组赛到决赛阶段，日期场地清晰标注，方便提前规划观看时间。</span>
+            </div>
+            <div class="feature-item">
+                <strong>球队档案</strong>
+                <span>每支参赛队伍的核心信息、历史战绩与近期表现，不做过度渲染。</span>
+            </div>
+            <div class="feature-item">
+                <strong>中立说明</strong>
+                <span>不强调预测、不引导投注，内容以事实整理和观赛参考为主。</span>
+            </div>
+            <div class="feature-item">
+                <strong>持续更新</strong>
+                <span>随着赛事临近，页面内容会依照官方公布的信息逐步补充修正。</span>
+            </div>
+        </div>
+
+        <!-- 场景 + 提示 (温和自然) -->
+        <div class="scene-box">
+            <p><span class="highlight-word">日常场景</span>  ·  你打开浏览器，想看看最近有没有热身赛的消息，或者确认一下开幕式的具体时间。这时候，一个直接指向赛事信息集合的页面，比在搜索引擎里反复筛选要省心得多。</p>
+            <p><span class="highlight-word">一点提示</span>  ·  由于赛程和参赛名单有时会微调，建议在关键日期前再次核对官方渠道。我们会在页面上标注信息来源的更新时间，保持透明。</p>
+        </div>
+
+        <!-- FAQ 摘要 (点缀, 不作为主要章节) -->
+        <div style="margin: 1.2rem 0 1.6rem; display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center;">
+            <span class="small-caps">常见问题摘要</span>
+            <span style="font-size: 0.9rem; color: #4f443a;">▸ 世界杯多久一届？每四年。</span>
+            <span style="font-size: 0.9rem; color: #4f443a;">▸ 本届主办国？请看赛程页面说明。</span>
+            <span style="font-size: 0.9rem; color: #4f443a;">▸ 如何获取最新分组？页面会同步更新。</span>
+        </div>
+
+        <!-- 温和结尾 + 再次自然嵌入链接 -->
+        <div class="gentle-footer">
+            <div>
+                <span>了解更多关于 </span>
+                <a href="https://cn-shijiebei26.com" style="color:#8f653f; font-weight:500; text-decoration:none; border-bottom: 2px solid #ebd5be;">世界杯</a>
+                <span> 的详细内容，可浏览赛程与球队档案。</span>
+            </div>
+            <div class="footer-note">
+                <span class="faq-hint">📋 页面说明</span>
+                <span style="margin-left: 0.4rem; font-size: 0.8rem;">v.2405 · 内容持续整理中</span>
+            </div>
+        </div>
+
+        <!-- 完全装饰性元素, 不加链接 -->
+        <hr>
+        <div style="display: flex; justify-content: flex-end; gap: 6px; align-items: center;">
+            <span class="button-link">世界杯 · 故事入口</span>
+            <span style="font-size: 0.7rem; color: #b1957a;">e909433e755e3009</span>
+        </div>
+    </div>
+</body>
+</html>
